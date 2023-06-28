@@ -95,7 +95,7 @@ import AlbumContainer from './AlbumContainer';
 import Sidebar from './Sidebar';
 import { fetchLaunchData } from './LaunchData';
 import AlbumDetails from './AlbumDetails';
-import { fetchAlbumDetails } from './FetchAlbumDetails';
+import { fetchAlbumDetails } from './Fetch1AlbumDetails';
 
 // Define the reducer function
 const reducer = (state, action) => {
