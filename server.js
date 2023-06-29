@@ -29,12 +29,14 @@ app.get('/', async (req, res) => {
 // details by ID
 
 // GET /song/:query
-app.get('/details/:id/:type', async (req, res) => {
+app.get('/details/:id/:type/:p/:n', async (req, res) => {
   try {
 
     const id = req.params.id;
     const type = req.params.type;
-    const url = `https://www.jiosaavn.com/api.php?__call=webapi.get&token=${id}&type=${type}&includeMetaTags=0&ctx=web6dot0&api_version=4&_format=json&_marker=0`;
+    const p=req.params.p;
+    const n=req.params.n;
+    const url = `https://www.jiosaavn.com/api.php?__call=webapi.get&token=${id}&type=${type}&p=${p}&n=${n}&includeMetaTags=0&ctx=web6dot0&api_version=4&_format=json&_marker=0`;
     const response = await axios.get(url);
 
     // Filter the songs for Tamil language
@@ -116,15 +118,14 @@ app.get('/search/albums/:query', async (req, res) => {
   });
 
   //Album details by ID
-const apiAlbumIDUrl = 'https://www.jiosaavn.com/api.php?__call=content.getAlbumDetails&_format=json&cc=in&_marker=0%3F_marker%3D0&albumid=';
 
 // GET /album/:query
 app.get('/album/:id', async (req, res) => {
   try {
 
-    const query = req.params.id;
-    const url = apiAlbumIDUrl;
-    const response = await axios.get(url + query);
+    const id = req.params.id;
+    const url = `https://www.jiosaavn.com/api.php?__call=webapi.get&api_version=4&_format=json&_marker=0&ctx=web6dot0&token=${id}&type=album`;
+    const response = await axios.get(url);
 
     // Filter the songs for Tamil language
     const album = response.data;
