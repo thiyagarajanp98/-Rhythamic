@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Navbar.css';
+import { Link } from 'react-router-dom';
 
 const Navbar = ({ handleSearch }) => {
   const [query, setQuery] = useState('');
@@ -12,9 +13,11 @@ const Navbar = ({ handleSearch }) => {
 
   return (
     <nav className="navbar">
-      <div className='part-one'>
-        <h2 className="navbar-title">RHYTHMIC</h2>
-      </div>
+      <Link to='/'>
+        <div className='part-one'>
+          <h2 className="navbar-title">RHYTHMIC</h2>
+        </div>
+      </Link>
       <div className='part-two'>
         <form role="search" method="get" className="search-form form" onSubmit={handleSubmit}>
           <label>

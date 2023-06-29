@@ -1,0 +1,11 @@
+.Main-container {
+    height: 100vh;
+    margin-left: 200px;
+    overflow: auto;
+    background-color: #002444;
+    padding-top: 20px;
+}
+
+.Main-container::-webkit-scrollbar {
+    display: none;
+  }

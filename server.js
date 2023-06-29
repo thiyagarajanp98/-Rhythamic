@@ -26,6 +26,26 @@ app.get('/', async (req, res) => {
   }
 });
 
+// details by ID
+
+// GET /song/:query
+app.get('/details/:id/:type', async (req, res) => {
+  try {
+
+    const id = req.params.id;
+    const type = req.params.type;
+    const url = `https://www.jiosaavn.com/api.php?__call=webapi.get&token=${id}&type=${type}&includeMetaTags=0&ctx=web6dot0&api_version=4&_format=json&_marker=0`;
+    const response = await axios.get(url);
+
+    // Filter the songs for Tamil language
+    const song = response.data
+
+    res.json(song);
+  } catch (error) {
+    res.status(500).json({ error: 'An error occurred' });
+  }
+});
+
 //Song search by string
 const apiSongUrl = 'https://www.jiosaavn.com/api.php?p={page}&_format=json&_marker=0&api_version=4&ctx=wap6dot0&n=50&__call=search.getResults&q=';
 

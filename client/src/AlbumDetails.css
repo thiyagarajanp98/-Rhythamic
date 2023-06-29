@@ -35,37 +35,24 @@
   .play {
     font-size: 1.2rem;
     border-radius: 2rem;
+    font-weight: 800;
     background-color: #f9d342;
   }
 
   .more {
     font-weight: 800;
     font-size: 1.2rem;
+    font-weight: 800;
     border-radius: 2rem;
-  }
-
-
-  .dropdown-button {
-    position: relative;
-    display: inline-block;
-  }
-  
-  .dropdown-button button {
-    padding: 8px 12px;
-    background-color: #eaeaea;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
   }
   
   .dropdown {
-    position: absolute;
-    top: 100%;
-    left: 0;
+    position: fixed;
     width: 200px;
-    background-color: #ffffff;
+    background-color: #f9d342;
+    color: black;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     z-index: 9999;
   }
@@ -78,7 +65,9 @@
   
   .dropdown li {
     padding: 8px 12px;
+    font-weight: 600;
     cursor: pointer;
+    text-align: center;
   }
   
   .dropdown li:hover {
