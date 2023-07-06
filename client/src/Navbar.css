@@ -1,5 +1,6 @@
 .navbar {
   display: flex;
+  z-index: 100;
   position: sticky;
   top: 0;
   left: 0;
@@ -15,7 +16,7 @@
 .part-one {
   padding: 0px 20px;
 }
-.part-two{
+.part-two {
   margin-right: 24rem;
 }
 
@@ -43,7 +44,6 @@
   border: none;
   cursor: pointer;
 } */
-
 
 input[type="search"] {
   background-clip: padding-box;

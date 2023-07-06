@@ -180,6 +180,25 @@ app.get('/playlist/:id', async (req, res) => {
   }
 });
   
+  //MoreAlbums details by ID
+
+// GET /playlist/:query
+app.get('/moreAlbums/:api:input', async (req, res) => {
+  try {
+
+    const api = req.params.api;
+    const apiMoreAlbumUrl = `https://www.jiosaavn.com/api.php?__call=${api}&api_version=4&_format=json&_marker=0&ctx=web6dot0`;
+    const response = await axios.get(apiMoreAlbumUrl);
+
+    // Filter the songs for Tamil language
+    const moreAlbums = response.data;
+
+    res.json(moreAlbums);
+  } catch (error) {
+    res.status(500).json({ error: 'An error occurred' });
+  }
+});
+  
 
 // Start the server
 const port = 8080;
